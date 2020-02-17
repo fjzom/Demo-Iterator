@@ -1,6 +1,5 @@
-import java.util.Vector;
-import java.util.Iterator;
-public class MexicanFoodStyleMenu {
+import java.util.Vector; 
+public class MexicanFoodStyleMenu implements Menu {
 	Vector<MenuItem> menuItems;
 	
 	public MexicanFoodStyleMenu() {
@@ -13,9 +12,11 @@ public class MexicanFoodStyleMenu {
 	private void addItem(String name, String description, boolean vegeterian, double price) {
 		 MenuItem item = new MenuItem(name, description, vegeterian, price);
 		 menuItems.add(item);
-	}
+	} 
+	 
 	
-	public Iterator<MenuItem> createIterator(){
-		return menuItems.iterator();
+	public Iterator  createIterator() {
+		// TODO Auto-generated method stub
+		return  new MexicanFoodStyleMenuIterator(menuItems);
 	}
 }

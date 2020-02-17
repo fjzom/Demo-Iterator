@@ -1,5 +1,5 @@
 
-public class DinerMenu {
+public class DinerMenu implements Menu{
 	static final int MAX_ITEMS = 6;
 	int numberOfItems = 0;
 

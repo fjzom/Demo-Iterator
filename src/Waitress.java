@@ -1,9 +1,10 @@
 
 public class Waitress {
-	PancakeHouseMenu pancakeHouseMenu;
-	DinerMenu dinerMenu;
-	MexicanFoodStyleMenu mexicanMenu;
-	public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu, MexicanFoodStyleMenu mexicanMenu) {
+	Menu pancakeHouseMenu;
+	Menu dinerMenu;
+	Menu mexicanMenu;
+	
+	public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu mexicanMenu) {
 		this.pancakeHouseMenu = pancakeHouseMenu;
 		this.dinerMenu = dinerMenu;
 		this.mexicanMenu = mexicanMenu;
@@ -11,25 +12,17 @@ public class Waitress {
 	
 	public void printMenu() {
 		Iterator pancakeIterator = pancakeHouseMenu.createIterator();
-		Iterator dienrIterator = dinerMenu.createIterator();
-
+		Iterator dinerIterator = dinerMenu.createIterator();
+		Iterator mexicaniterator = mexicanMenu.createIterator();
+		
 		System.out.println("Menu\n----\nBREAKFAST");
 		printMenu(pancakeIterator);
 		System.out.println("Menu\n----\nLUNCH");
-		printMenu(dienrIterator);
+		printMenu(dinerIterator);
 		System.out.println("Menu\n----\nMEXICAN FOOD");
-		printMenu(mexicanMenu.createIterator());
+		printMenu(mexicaniterator);
 	}
-	
-	private void printMenu(java.util.Iterator<MenuItem> iterator) {
-		
-		while(iterator.hasNext()) {
-			MenuItem menuItem = (MenuItem) iterator.next();
-			System.out.println(menuItem.getName() + ", ");
-			System.out.println(menuItem.getPrice() + " -- ");
-			System.out.println(menuItem.getDescription());
-		}
-	}
+	 
 		
 		private void printMenu(Iterator iterator) {
 			
